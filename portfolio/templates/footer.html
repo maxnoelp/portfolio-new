@@ -1,0 +1,30 @@
+{% load static %}
+
+<div class="bg-white py-5">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-2">
+      <div class="col text-center">
+        <img src="{% static 'images/logo.png' %}"
+             class="img-fluid nav-img"
+             alt="Ein Logo"
+             title="Dass ist ein Logo mit dem Schriftzug Prinz Studios in Gold" />
+      </div>
+      <div class="col">
+        <div class="d-flex justify-content-center gap-3">
+          <a href="#aboutMe" class="link-text-btn">About Me</a>
+          <a href="{% url 'contact' %}" class="link-text-btn">Kontakt</a>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="d-flex justify-content-center align-items-center w-100">
+      <div>
+        <a href="https://www.linkedin.com/in/max-nölp-18b41a312/"
+           class="border-bottom border-3 border-black pb-2"><i class="bi bi-linkedin text-black fs-3 p-0 m-3"></i></a>
+        <a href="https://github.com/maxnoelp"
+           class="border-bottom border-3 border-black pb-2"><i class="bi bi-github text-black fs-3 p-0 m-3"></i></a>
+        <a href="" class="border-bottom border-3 border-black pb-2"><i class="bi bi-instagram text-black fs-3 p-0 m-3"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
