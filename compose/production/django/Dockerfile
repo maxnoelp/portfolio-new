@@ -98,4 +98,5 @@ RUN DATABASE_URL="" \
   python manage.py compilemessages
 
 RUN mkdir -p /app/staticfiles && chown -R django:django /app/staticfiles
+
 ENTRYPOINT ["/entrypoint"]
