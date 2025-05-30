@@ -15,6 +15,7 @@ services:
       dockerfile: ./compose/production/django/Dockerfile
 
     image: portfolio_production_django
+    pull_policy: never
     volumes:
       - production_django_media:/app/portfolio/media
     depends_on:
@@ -30,6 +31,7 @@ services:
       context: .
       dockerfile: ./compose/production/postgres/Dockerfile
     image: portfolio_production_postgres
+    pull_policy: never
     volumes:
       - production_postgres_data:/var/lib/postgresql/data
       - production_postgres_data_backups:/backups
@@ -41,6 +43,7 @@ services:
       context: .
       dockerfile: ./compose/production/traefik/Dockerfile
     image: portfolio_production_traefik
+    pull_policy: never
     depends_on:
       - django
     volumes:
@@ -60,16 +63,19 @@ services:
   celeryworker:
     <<: *django
     image: portfolio_production_celeryworker
+    pull_policy: never
     command: /start-celeryworker
 
   celerybeat:
     <<: *django
     image: portfolio_production_celerybeat
+    pull_policy: never
     command: /start-celerybeat
 
   flower:
     <<: *django
     image: portfolio_production_flower
+    pull_policy: never
     command: /start-flower
 
   nginx:
@@ -77,6 +83,7 @@ services:
       context: .
       dockerfile: ./compose/production/nginx/Dockerfile
     image: portfolio_production_nginx
+    pull_policy: never
     depends_on:
       - django
     volumes:
