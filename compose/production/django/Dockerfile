@@ -97,4 +97,5 @@ RUN DATABASE_URL="" \
   DJANGO_SETTINGS_MODULE="config.settings.test" \
   python manage.py compilemessages
 
+RUN mkdir -p /app/staticfiles && chown -R django:django /app/staticfiles
 ENTRYPOINT ["/entrypoint"]
