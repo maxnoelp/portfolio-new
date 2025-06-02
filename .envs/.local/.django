@@ -15,7 +15,7 @@ CELERY_FLOWER_PASSWORD=debug
 
 
 # Mailgun
-MAILGUN_API_KEY=f8b991caa9b008ae1e414fcb47386d90-08c79601-dee3862c
+MAILGUN_API_KEY=
 DJANGO_EMAIL_BACKEND=anymail.backends.mailgun.EmailBackend
 MAILGUN_SENDER_DOMAIN=mg.prinz-code.de
 MAILGUN_API_URL=https://api.eu.mailgun.net/v3
