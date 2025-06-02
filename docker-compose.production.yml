@@ -14,6 +14,10 @@ services:
     build:
       context: .
       dockerfile: ./compose/production/django/Dockerfile
+      args:
+        MAILGUN_API_KEY: ${MAILGUN_API_KEY}
+      environment:
+        MAILGUN_API_KEY: ${MAILGUN_API_KEY}
 
     image: portfolio_production_django
     pull_policy: never
