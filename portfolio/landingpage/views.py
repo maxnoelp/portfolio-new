@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.shortcuts import render
@@ -80,11 +81,14 @@ def contact_view(request):
             )
             send_mail(
                 subject="Anfrage Prinz-Code.de",
-                message=f"Von: {form.cleaned_data['name']} ({form.cleaned_data['email']})\n\n{form.cleaned_data['message']}",  # noqa: E501
-                from_email="kontakt@prinz-code.de",
+                message=(
+                    f"Von: {form.cleaned_data['name']} "
+                    f"({form.cleaned_data['email']})\n\n{form.cleaned_data['message']}"
+                ),
+                from_email=settings.DEFAULT_FROM_EMAIL,  # <-- nicht hart verdrahten
                 recipient_list=["noelpmax@gmail.com"],
-                fail_silently=False,
             )
+
             return render(request, "landingpage/contact.html", {"form": ContactForm()})
     else:
         form = ContactForm()
