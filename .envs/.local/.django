@@ -12,10 +12,3 @@ REDIS_URL=redis://redis:6379/0
 # Flower
 CELERY_FLOWER_USER=debug
 CELERY_FLOWER_PASSWORD=debug
-
-
-# Mailgun
-MAILGUN_API_KEY=
-DJANGO_EMAIL_BACKEND=anymail.backends.mailgun.EmailBackend
-MAILGUN_SENDER_DOMAIN=mg.prinz-code.de
-MAILGUN_API_URL=https://api.eu.mailgun.net/v3
